@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.example.soboksobook"
-    compileSdk = 32
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.example.soboksobook"
         minSdk = 25
-        targetSdk=32
+        targetSdk=33
         versionCode = 1
         versionName = "1.0"
 
@@ -33,7 +33,10 @@ dependencies {
     implementation("com.github.ybq:Android-SpinKit:1.4.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 
-    implementation("androidx.appcompat:appcompat:1.4.1")
+    //타이머 관련 의존성
+
+    implementation("com.github.krtkush:LinearTimer:v2.1.1")
+    implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.android.gms:play-services-maps:18.2.0")
