@@ -66,14 +66,14 @@
         android:orientation="horizontal"
         android:gravity="right">
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/cancelBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="취소"
             />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/saveBtn"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
