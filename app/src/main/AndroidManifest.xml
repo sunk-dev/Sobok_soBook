@@ -23,7 +23,8 @@
         </activity>
        <activity android:name=".BookListActivity"/>
         <activity android:name=".BookNoteActivity"/>
-        <activity android:name=".MapActivity"/>
+        <activity android:name=".BookMapActivity"/>
+        <activity android:name=".BookTimerActivity"/>
         <activity android:name=".LoginActivity"/>
     </application>
 
