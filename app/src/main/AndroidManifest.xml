@@ -21,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+       <activity android:name=".BookListActivity"/>
+        <activity android:name=".BookNoteActivity"/>
+        <activity android:name=".MapActivity"/>
+        <activity android:name=".LoginActivity"/>
     </application>
 
 </manifest>
