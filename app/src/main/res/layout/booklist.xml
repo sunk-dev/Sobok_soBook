@@ -28,10 +28,12 @@
 
 
         <ScrollView
+
             android:layout_width="match_parent"
             android:layout_height="401dp">
 
             <LinearLayout
+                android:id="@+id/scroll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" />
