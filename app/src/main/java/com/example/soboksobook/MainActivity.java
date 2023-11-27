@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,10 +16,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        de.hdodenhof.circleimageview.CircleImageView bookNoteBtn  =(de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.bookNote);
-        de.hdodenhof.circleimageview.CircleImageView bookListBtn  =(de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.booklist);
-        de.hdodenhof.circleimageview.CircleImageView bookMapBtn  =(de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.bookMap);
-        de.hdodenhof.circleimageview.CircleImageView bookTimerBtn  =(de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.bookTimer);
+        ImageButton bookNoteBtn  =(ImageButton) findViewById(R.id.bookNote);
+        ImageButton bookListBtn  =(ImageButton) findViewById(R.id.booklist);
+        ImageButton bookMapBtn  =(ImageButton) findViewById(R.id.bookMap);
+        ImageButton bookTimerBtn  =(ImageButton) findViewById(R.id.bookTimer);
     }
 
     //터치시 버튼값 별로 구분하기
