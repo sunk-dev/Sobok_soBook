@@ -80,7 +80,7 @@
             android:layout_width="200dp"
             android:backgroundTint="#FCF5ED"
             android:onClick="onBtnClick"
-            android:src="@drawable/bookshelficon" />
+            android:src="@drawable/noteicon2" />
 
         <ImageButton
             android:id="@+id/bookNote"
@@ -91,7 +91,7 @@
             android:layout_width="200dp"
             android:backgroundTint="#FCF5ED"
             android:onClick="onBtnClick"
-            android:src="@drawable/noteicon2" />
+            android:src="@drawable/bookshelficon" />
 
 
     </LinearLayout>
