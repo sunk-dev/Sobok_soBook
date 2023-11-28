@@ -31,13 +31,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <Button
+            android:id="@+id/datepickBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="달력"/>
+       
 
         <EditText
             android:id="@+id/editTextDate"
+            android:editable="false"
+            android:onClick="onBtnClick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="date"
+            android:inputType=""
             android:hint="기록날짜입력"/>
 
         <EditText
