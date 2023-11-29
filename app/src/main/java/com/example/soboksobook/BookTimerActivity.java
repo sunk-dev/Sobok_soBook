@@ -39,22 +39,31 @@ public class BookTimerActivity extends AppCompatActivity {
         min=(EditText) findViewById(R.id.min);
         sec=(EditText)findViewById(R.id.second);
 
-        countdownTimer = findViewById(R.id.countdown_timer);
+//        countdownTimer = findViewById(R.id.countdown_timer);
 
         mButton = findViewById(R.id.start);
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
                 //텍스트가 Start면 startTimer
                 //Stop면 일시중지
 
-                mButton.setText("stop");
-                startTimer();
+
+
+
+                if(mButton.getText().toString().equals("stop")){
+                    timer.cancel();
+                    mButton.setText("Start");
+                }else{
+                    mButton.setText("stop");
+                    startTimer();
+
+                }
             }
         });
     }
+
 
     private void startTimer() {
 
@@ -90,6 +99,7 @@ public class BookTimerActivity extends AppCompatActivity {
 //                countdownTimer.setText(timeLeftFormatted);
             }
 
+
             @Override
             public void onFinish() {
                 h.setText("00");
@@ -100,7 +110,12 @@ public class BookTimerActivity extends AppCompatActivity {
 //                MediaPlayer mysong = MediaPlayer.create (BookTimerActivity.this,R.raw.alarm); // please add your alarm tone mp3 file
 //                mysong.start ();
             }
+
+
+
         }.start();
+
+
 
 
     }}
