@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,11 +28,16 @@ public class BookTimerActivity extends AppCompatActivity {
     private CountDownTimer timer;
 
     Button mButton;
+    EditText h, min,sec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timer);
+
+        h=(EditText)findViewById(R.id.hour);
+        min=(EditText) findViewById(R.id.min);
+        sec=(EditText)findViewById(R.id.second);
 
         countdownTimer = findViewById(R.id.countdown_timer);
 
@@ -40,6 +46,11 @@ public class BookTimerActivity extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                
+                //텍스트가 Start면 startTimer
+                //Stop면 일시중지
+
+                mButton.setText("stop");
                 startTimer();
             }
         });
@@ -47,7 +58,16 @@ public class BookTimerActivity extends AppCompatActivity {
 
     private void startTimer() {
 
-        timer = new CountDownTimer(10000, 1000) {
+        int second = Integer.parseInt(sec.getText().toString());
+        int minute=Integer.parseInt(min.getText().toString());
+        int hour=Integer.parseInt(h.getText().toString());
+
+
+        int countDownTime=second*1000+minute*60000+hour*3600000;
+        
+        //시간 입력해서 들어가게
+
+        timer = new CountDownTimer(countDownTime, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 long hours = (millisUntilFinished / 1000) / 3600;
