@@ -27,6 +27,7 @@
             android:layout_width="347dp"
             android:layout_height="347dp"
             android:layout_weight="1"
+            android:gravity="center"
 
             android:background="@drawable/timercircle">
 
@@ -77,20 +78,6 @@
                     android:textSize="50sp"/>
 
             </LinearLayout>
-
-            <TextView
-
-                android:id="@+id/countdown_timer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="80dp"
-                android:text="00:00:00"
-                android:textColor="#000000"
-                android:textSize="50sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         </LinearLayout>
 

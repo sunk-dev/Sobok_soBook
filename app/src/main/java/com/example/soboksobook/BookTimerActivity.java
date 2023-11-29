@@ -62,6 +62,7 @@ public class BookTimerActivity extends AppCompatActivity {
         int minute=Integer.parseInt(min.getText().toString());
         int hour=Integer.parseInt(h.getText().toString());
 
+        //작동시 수정 안되게
         h.setEnabled(false);
         min.setEnabled(false);
         sec.setEnabled(false);
