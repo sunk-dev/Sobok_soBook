@@ -73,13 +73,24 @@ public class BookTimerActivity extends AppCompatActivity {
                 long hours = (millisUntilFinished / 1000) / 3600;
                 long minutes = ((millisUntilFinished / 1000) % 3600) / 60;
                 long seconds = (millisUntilFinished / 1000) % 60;
-                String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d:%02d", hours, minutes, seconds);
-                countdownTimer.setText(timeLeftFormatted);
+//
+//                h=(EditText)findViewById(R.id.hour);
+//                min=(EditText) findViewById(R.id.min);
+//                sec
+//
+                h.setText(String.format(Locale.getDefault(),"%02d",hours));
+                min.setText(String.format(Locale.getDefault(),"%02d",minutes));
+                sec.setText(String.format(Locale.getDefault(),"%02d",seconds));
+//                String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d:%02d", hours, minutes, seconds);
+//                countdownTimer.setText(timeLeftFormatted);
             }
 
             @Override
             public void onFinish() {
-                countdownTimer.setText("00:00:00");
+                h.setText("00");
+                min.setText("00");
+                sec.setText("00");
+//                countdownTimer.setText("00:00:00");
                 Toast.makeText(BookTimerActivity.this, "Time's up", Toast.LENGTH_SHORT).show();
 //                MediaPlayer mysong = MediaPlayer.create (BookTimerActivity.this,R.raw.alarm); // please add your alarm tone mp3 file
 //                mysong.start ();
