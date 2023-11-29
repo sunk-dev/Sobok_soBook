@@ -62,6 +62,10 @@ public class BookTimerActivity extends AppCompatActivity {
         int minute=Integer.parseInt(min.getText().toString());
         int hour=Integer.parseInt(h.getText().toString());
 
+        h.setEnabled(false);
+        min.setEnabled(false);
+        sec.setEnabled(false);
+
 
         int countDownTime=second*1000+minute*60000+hour*3600000;
         
