@@ -49,15 +49,19 @@ public class BookTimerActivity extends AppCompatActivity {
                 //텍스트가 Start면 startTimer
                 //Stop면 일시중지
 
+                //에러: 일시 중지는 되는데 다시 시작이 안됨.
+                boolean isFirst=true;
 
 
 
-                if(mButton.getText().toString().equals("stop")){
+
+                if(mButton.getText().toString().equals("Stop")){
                     timer.cancel();
                     mButton.setText("Start");
+                    isFirst=false;
                 }else{
-                    mButton.setText("stop");
-                    startTimer();
+                    mButton.setText("Stop");
+                    startTimer(isFirst);
 
                 }
             }
@@ -65,7 +69,8 @@ public class BookTimerActivity extends AppCompatActivity {
     }
 
 
-    private void startTimer() {
+
+    private void startTimer(boolean isFirst) {
 
         int second = Integer.parseInt(sec.getText().toString());
         int minute=Integer.parseInt(min.getText().toString());
@@ -78,8 +83,6 @@ public class BookTimerActivity extends AppCompatActivity {
 
 
         int countDownTime=second*1000+minute*60000+hour*3600000;
-        
-        //시간 입력해서 들어가게
 
         timer = new CountDownTimer(countDownTime, 1000) {
             @Override
@@ -98,13 +101,12 @@ public class BookTimerActivity extends AppCompatActivity {
 //                String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d:%02d", hours, minutes, seconds);
 //                countdownTimer.setText(timeLeftFormatted);
             }
-
-
             @Override
             public void onFinish() {
                 h.setText("00");
                 min.setText("00");
                 sec.setText("00");
+                mButton.setText("Start");
 //                countdownTimer.setText("00:00:00");
                 Toast.makeText(BookTimerActivity.this, "Time's up", Toast.LENGTH_SHORT).show();
 //                MediaPlayer mysong = MediaPlayer.create (BookTimerActivity.this,R.raw.alarm); // please add your alarm tone mp3 file
@@ -113,9 +115,30 @@ public class BookTimerActivity extends AppCompatActivity {
 
 
 
-        }.start();
+        };
+        if(isFirst){
+            timer.start();
+
+        }else{
+            second = Integer.parseInt(sec.getText().toString());
+            minute=Integer.parseInt(min.getText().toString());
+            hour=Integer.parseInt(h.getText().toString());
+            countDownTime=second*1000+minute*60000+hour*3600000;
+            timer.onTick(countDownTime);
+
+        }
+
+
+        }
 
 
 
 
-    }}
+
+
+
+
+
+
+
+    }

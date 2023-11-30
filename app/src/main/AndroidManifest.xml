@@ -18,7 +18,11 @@
 
             <meta-data
                 android:name="com.google.android.geo.API_KEY"
-                android:value="AIzaSyBL-iXUlOjIVaCnFNOt20u-xqR4NALc3c8"/>
+                android:value="${MAPS_API_KEY}" />
+            <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,6 +34,7 @@
         <activity android:name=".BookMapActivity"/>
         <activity android:name=".BookTimerActivity"/>
         <activity android:name=".LoginActivity"/>
+        <activity android:name=".MapTest"/>
     </application>
 
 </manifest>
