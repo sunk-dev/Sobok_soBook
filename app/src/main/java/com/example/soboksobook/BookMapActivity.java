@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class BookMapActivity extends AppCompatActivity implements OnMapReadyCallback  {
     private GoogleMap mMap;
+//    SupportMapFragment supportMapFragment;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

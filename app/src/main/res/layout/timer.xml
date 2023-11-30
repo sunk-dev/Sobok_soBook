@@ -37,6 +37,7 @@
                 android:orientation="horizontal">
                 <EditText
                     android:id="@+id/hour"
+                    android:hint="00"
                     android:inputType="numberDecimal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -53,6 +54,7 @@
                     android:textSize="50sp"/>
                 <EditText
                     android:id="@+id/min"
+                    android:hint="00"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="00"
@@ -69,6 +71,7 @@
                     android:textSize="50sp"/>
                 <EditText
                     android:id="@+id/second"
+                    android:hint="00"
                     android:inputType="numberDecimal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
