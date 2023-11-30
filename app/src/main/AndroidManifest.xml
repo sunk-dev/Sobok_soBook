@@ -26,6 +26,10 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+<!--                카카오-->
+                <data android:host="oauth"
+                    android:scheme="4a224fa5b29addfa992cef2e09436b2b" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

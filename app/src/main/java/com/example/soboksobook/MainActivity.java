@@ -1,5 +1,7 @@
 package com.example.soboksobook;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -7,21 +9,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.kakao.sdk.common.util.Utility;
+import com.kakao.sdk.network.UtilityKt;
 
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     EditText editTextDate;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String keyHash = Utility.INSTANCE.getKeyHash(this);
+        Toast.makeText(MainActivity.this, keyHash, Toast.LENGTH_SHORT).show();
 
         ImageButton bookNoteBtn  =(ImageButton) findViewById(R.id.bookNote);
         ImageButton bookListBtn  =(ImageButton) findViewById(R.id.booklist);
