@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
 //            intent=new Intent(Intent.ACTION_VIEW,uri); //명시적..
             }
-            else if (id==R.id.bookTimer) intent=new Intent(MainActivity.this, BookMapActivity.class);
+            else if (id==R.id.bookTimer) intent=new Intent(MainActivity.this, BookTimerActivity.class);
 
 
             startActivity(intent);
