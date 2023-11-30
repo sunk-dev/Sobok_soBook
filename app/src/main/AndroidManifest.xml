@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.soboksobook"
     xmlns:tools="http://schemas.android.com/tools">
+<!--    인터넷 사용권한 설정-->
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:name=".kakaoApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -33,6 +37,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+<!--        카카오 로그인 화면으로 이동위한 액티비티 추가-->
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:host="oauth"
+                    android:scheme="4a224fa5b29addfa992cef2e09436b2b" />
+
+
+            </intent-filter>
+        </activity>
        <activity android:name=".BookListActivity"/>
         <activity android:name=".BookNoteActivity"/>
         <activity android:name=".BookMapActivity"/>
@@ -40,5 +60,8 @@
         <activity android:name=".LoginActivity"/>
         <activity android:name=".MapTest"/>
     </application>
+
+
+
 
 </manifest>

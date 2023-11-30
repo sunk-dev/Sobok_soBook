@@ -30,8 +30,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String keyHash = Utility.INSTANCE.getKeyHash(this);
-        Toast.makeText(MainActivity.this, keyHash, Toast.LENGTH_SHORT).show();
+        //Utility.getKeyHash(this);가 에러날때 아래 이용할것
+//        String keyHash = Utility.INSTANCE.getKeyHash(this);
+//        Log.d("kakao keyyhash",keyHash);
 
         ImageButton bookNoteBtn  =(ImageButton) findViewById(R.id.bookNote);
         ImageButton bookListBtn  =(ImageButton) findViewById(R.id.booklist);
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
 //            intent=new Intent(Intent.ACTION_VIEW,uri); //명시적..
         }
-        else if (id==R.id.bookTimer) intent=new Intent(MainActivity.this, BookTimerActivity.class);
+        else if (id==R.id.bookTimer) intent=new Intent(MainActivity.this, LoginActivity.class);
 
 
         startActivity(intent);
