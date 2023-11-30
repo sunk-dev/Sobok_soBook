@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GET_RESULT) {
             if (resultCode == RESULT_OK) {
-                loginText.setText("" + data.getIntExtra("RESTUL", 0));
+                loginText.setText("" + data.getStringExtra("RESULT"));
             }
         }
     }
