@@ -1,6 +1,7 @@
 package com.example.soboksobook;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -63,6 +64,12 @@ public  class LoginActivity extends AppCompatActivity {
 
                 if(user!=null){
                     Log.d("invoke:nickName",user.getKakaoAccount().getProfile().getNickname());
+                    //프로파일에서 가져올수 있는거 닉네임 이미지 파일
+                    String nickname = user.getKakaoAccount().getProfile().getNickname();
+                    Intent intent= new Intent(LoginActivity.this, MainActivity.class);
+                    intent.putExtra("RESULT",nickname);
+                    setResult(RESULT_OK,intent);
+                    startActivity(intent);
                 }else{
                     Log.d("isLogin","로그인 안됨!");
                 }

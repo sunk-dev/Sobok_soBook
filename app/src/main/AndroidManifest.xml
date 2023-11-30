@@ -53,6 +53,8 @@
 
             </intent-filter>
         </activity>
+
+<!--        구글 지도도 저렇게 해줘야 경로를 잡나..?-->
        <activity android:name=".BookListActivity"/>
         <activity android:name=".BookNoteActivity"/>
         <activity android:name=".BookMapActivity"/>
