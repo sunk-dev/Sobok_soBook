@@ -31,6 +31,7 @@ public  class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.booklogin);
         kakaoBtn=(Button)findViewById(R.id.btnLogin);
+        Log.d("getkwyHash",""+getKeyHash(LoginActivity.this));
 
         //kakaosdk초기화
 
@@ -68,10 +69,12 @@ public  class LoginActivity extends AppCompatActivity {
                     String nickname = user.getKakaoAccount().getProfile().getNickname();
                     Intent intent= new Intent(LoginActivity.this, MainActivity.class);
                     intent.putExtra("RESULT",nickname);
+                    Log.d("name",nickname);
                     setResult(RESULT_OK,intent);
-                    startActivity(intent);
+                    finish();
                 }else{
                     Log.d("isLogin","로그인 안됨!");
+
                 }
                 return null;
             }
