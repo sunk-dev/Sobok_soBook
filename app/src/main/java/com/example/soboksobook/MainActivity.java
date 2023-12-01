@@ -19,15 +19,25 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.kakao.sdk.common.util.Utility;
 import com.kakao.sdk.network.UtilityKt;
 
 import java.util.Date;
 
+
 public class MainActivity extends AppCompatActivity {
     EditText editTextDate;
     TextView loginText;
     static  final int  GET_RESULT=1;
+
+
 
 
     @Override
@@ -87,4 +97,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-}
+
+
+
+
+} // end class
