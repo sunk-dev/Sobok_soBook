@@ -10,6 +10,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,12 +26,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 
 public  class LoginActivity extends AppCompatActivity {
-    Button kakaoBtn;
+    ImageButton kakaoBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.booklogin);
-        kakaoBtn=(Button)findViewById(R.id.btnLogin);
+        kakaoBtn=(ImageButton)findViewById(R.id.btnLogin);
         Log.d("getkwyHash",""+getKeyHash(LoginActivity.this));
 
         //kakaosdk초기화
