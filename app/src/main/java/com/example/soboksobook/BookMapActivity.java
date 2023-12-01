@@ -21,7 +21,7 @@ public class BookMapActivity extends AppCompatActivity implements OnMapReadyCall
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.map);
+        setContentView(R.layout.maptest);
 
     }
 

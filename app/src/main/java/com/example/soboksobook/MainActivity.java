@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             else if (id==R.id.bookNote) intent=new Intent(MainActivity.this, BookListActivity.class);
             else if(id==R.id.bookMap){
                 Uri uri=Uri.parse("geo: 37.564213,127.001698");
-//            intent= new Intent(MainActivity.this,uri,BookMapActivity.class);
+            intent= new Intent(MainActivity.this, MapTest.class);
 
 //            intent=new Intent(Intent.ACTION_VIEW,uri); //명시적..
             }

@@ -3,6 +3,7 @@
     package="com.example.soboksobook"
     xmlns:tools="http://schemas.android.com/tools">
 <!--    인터넷 사용권한 설정-->
+    <!--    package="com.example.soboksobook"-->
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -16,16 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SOBOKSOBOOK"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
 
-            <meta-data
-                android:name="com.google.android.geo.API_KEY"
-                android:value="${MAPS_API_KEY}" />
-            <meta-data
-                android:name="com.google.android.gms.version"
-                android:value="@integer/google_play_services_version" />
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,7 +59,7 @@
         <activity android:name=".BookMapActivity"/>
         <activity android:name=".BookTimerActivity"/>
         <activity android:name=".LoginActivity"/>
-        <activity android:name=".MapTest"/>
+        <activity android:name=".MapTest"></activity>
     </application>
 
 
