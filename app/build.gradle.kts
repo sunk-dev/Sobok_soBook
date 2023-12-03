@@ -2,6 +2,9 @@ plugins {
     id("com.android.application")
     id ("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 
+    //
+    id("com.google.gms.google-services")
+
 }
 
 android {
@@ -31,6 +34,18 @@ android {
 }
 
 dependencies {
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
+
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
+
 //
     implementation("com.github.ybq:Android-SpinKit:1.4.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")

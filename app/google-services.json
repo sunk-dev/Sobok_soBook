@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "128400561092",
+    "project_id": "memoapp-3abd3",
+    "storage_bucket": "memoapp-3abd3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128400561092:android:66cf7369483a5672414a91",
+        "android_client_info": {
+          "package_name": "com.example.soboksobook"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCmyMaSSlTRTV9Z85we6KdbhDgTFdbjnY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
