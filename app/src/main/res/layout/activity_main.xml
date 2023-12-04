@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
+            android:id="@+id/thumbnail"
             android:layout_marginLeft="30dp"
             android:layout_width="70dp"
             android:layout_height="100dp"
@@ -31,7 +32,7 @@
             android:layout_height="49dp"
             android:textAlignment="center"
             android:paddingTop="10dp"
-            android:text="로그인"
+            android:text="로그인해주세요!"
             tools:layout_editor_absoluteX="243dp"
             tools:layout_editor_absoluteY="33dp"
             tools:ignore="MissingConstraints"  />

@@ -16,9 +16,11 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -29,12 +31,17 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.kakao.sdk.common.util.Utility;
 import com.kakao.sdk.network.UtilityKt;
 
+import java.util.ArrayList;
 import java.util.Date;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class MainActivity extends AppCompatActivity {
     EditText editTextDate;
     TextView loginText;
+
+    ImageView thumbnailImg;
     static  final int  GET_RESULT=1;
 
 
@@ -53,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton bookMapBtn  =(ImageButton) findViewById(R.id.bookMap);
         ImageButton bookTimerBtn  =(ImageButton) findViewById(R.id.bookTimer);
         loginText=(TextView) findViewById(R.id.nameText);
+        thumbnailImg=(ImageView) findViewById(R.id.thumbnail);
 
 
 
@@ -93,7 +101,15 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GET_RESULT) {
             if (resultCode == RESULT_OK) {
-                loginText.setText("" + data.getStringExtra("RESULT"));
+
+                ArrayList<String> datas= (ArrayList<String>) data.getSerializableExtra("RESULT");
+
+                loginText.setText("" + datas.get(0));
+                Glide.with(thumbnailImg).load(datas.get(1)).circleCrop().into(thumbnailImg);
+
+
+
+
             }
         }
     }

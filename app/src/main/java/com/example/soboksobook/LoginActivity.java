@@ -15,12 +15,14 @@ import android.widget.ImageButton;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.kakao.sdk.auth.model.OAuthToken;
 import com.kakao.sdk.user.UserApiClient;
 import com.kakao.sdk.user.model.User;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
@@ -68,8 +70,14 @@ public  class LoginActivity extends AppCompatActivity {
                     Log.d("invoke:nickName",user.getKakaoAccount().getProfile().getNickname());
                     //프로파일에서 가져올수 있는거 닉네임 이미지 파일
                     String nickname = user.getKakaoAccount().getProfile().getNickname();
+                    String thumbnailImageUrl = user.getKakaoAccount().getProfile().getProfileImageUrl();
+                    ArrayList<String> profile=new ArrayList<>();
+                    profile.add(nickname+"님");
+                    profile.add(thumbnailImageUrl);
+
                     Intent intent= new Intent(LoginActivity.this, MainActivity.class);
-                    intent.putExtra("RESULT",nickname);
+                    intent.putExtra("RESULT",profile);
+
                     Log.d("name",nickname);
                     setResult(RESULT_OK,intent);
                     finish();
