@@ -2,25 +2,53 @@ package com.example.soboksobook;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.textfield.*;
+
 import java.util.Calendar;
 
 public class BookNoteActivity extends AppCompatActivity {
+    DBHelper helper;
+    SQLiteDatabase db;
     Button cancelBtn, saveBtn,datePickBtn;
-    EditText editText;
+    EditText editText,titleEdit;
+
+    TextInputEditText contentEdit;
     DatePickerDialog datePickerDialog;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.booknote);
+
+
+        titleEdit=(EditText)findViewById(R.id.editTextTextMultiLine);
+        contentEdit=(TextInputEditText) findViewById(R.id.editBOOkContent);
+
+        //db
+        helper=new DBHelper(this);
+        try{
+            db=helper.getWritableDatabase();
+
+        }catch (SQLException ex){
+            db=helper.getReadableDatabase();
+        }
+
+
+
+
+
+
         cancelBtn=(Button) findViewById(R.id.cancelBtn);
         saveBtn=(Button) findViewById(R.id.saveBtn);
         datePickBtn=(Button)findViewById(R.id.datepickBtn);
@@ -59,6 +87,19 @@ public class BookNoteActivity extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String date=editText.getText().toString();
+                String title=titleEdit.getText().toString();
+                String content=contentEdit.getText().toString();
+                db.execSQL("INSERT INTO mybook VALUES ( null,'"+ date +"','"+ title +"','"+ content +"'); ");
+                Toast.makeText(getApplicationContext(),"성공적으로 추가되었습니다",Toast.LENGTH_LONG).show();
+            }
+        });
+
+
 
 
     }

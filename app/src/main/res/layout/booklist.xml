@@ -27,18 +27,15 @@
         android:orientation="vertical">
 
 
-        <ScrollView
+        <ListView
+            android:id="@+id/list"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
-            <LinearLayout
-                android:id="@+id/scroll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-        </ScrollView>
+
+        </ListView>
 <!--        <include layout="@layout/book"/>-->
 
     </LinearLayout>
