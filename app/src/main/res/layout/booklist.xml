@@ -16,11 +16,7 @@
             app:civ_border_overlay="true"
             app:civ_border_width="10dp" />
     </LinearLayout>
-    <Button
-        android:id="@+id/addBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="레이아웃을 추가합니다"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

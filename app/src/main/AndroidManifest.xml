@@ -20,6 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SOBOKSOBOOK"
+        android:enableOnBackInvokedCallback="true"
         tools:targetApi="31">
 <!--        metadata는 applicatin 바로 아래..-->
         <meta-data

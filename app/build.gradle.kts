@@ -60,10 +60,11 @@ dependencies {
 
     implementation ("com.google.android.gms:play-services-places:15.0.0")
     implementation ("com.google.android.libraries.places:places:2.4.0")
+    implementation("com.android.support:multidex:1.0.3")
+
 
     //네트워킹
     implementation ("com.android.volley:volley:1.2.1")
-
 
 
     //kakao sdk

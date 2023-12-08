@@ -38,27 +38,30 @@ public class MapTest extends AppCompatActivity implements OnMapReadyCallback {
 
         Places.initialize(getApplicationContext(), "AIzaSyBL-iXUlOjIVaCnFNOt20u-xqR4NALc3c8");
 
+
+        // Initialize the AutocompleteSupportFragment.
         AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)
                 getSupportFragmentManager().findFragmentById(R.id.autocomplete_fragment);
 
-        autocompleteFragment.setTypeFilter(TypeFilter.ESTABLISHMENT);
+        // Specify the types of place data to return.
+        autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME));
 
-        autocompleteFragment.setCountries("KR");
-        autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG));
-
+        // Set up a PlaceSelectionListener to handle the response.
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
-            public void onPlaceSelected(Place place) {
-
-                Input_LatLng = place.getLatLng();
-
+            public void onPlaceSelected(@NonNull Place place) {
+                // TODO: Get info about the selected place.
+                Log.i(TAG, "Place: " + place.getName() + ", " + place.getId());
             }
 
+
             @Override
-            public void onError(Status status) {
+            public void onError(@NonNull Status status) {
+                // TODO: Handle the error.
                 Log.i(TAG, "An error occurred: " + status);
             }
         });
+
 
 
 
@@ -74,7 +77,14 @@ public class MapTest extends AppCompatActivity implements OnMapReadyCallback {
     public void onMapReady(final GoogleMap googleMap) {
         mMap = googleMap;
 
-        Input_LatLng = new LatLng(37.556, 126.97);
+        googleMap.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
+            @Override
+            public void onMapLoaded() {
+
+            }
+        });
+
+       /* Input_LatLng = new LatLng(37.556, 126.97);
 
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(Input_LatLng);
@@ -83,6 +93,6 @@ public class MapTest extends AppCompatActivity implements OnMapReadyCallback {
 
         mMap.addMarker(markerOptions);
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Input_LatLng, 10));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Input_LatLng, 10));*/
     }
 }
