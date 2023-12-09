@@ -20,12 +20,15 @@ import com.google.android.libraries.places.api.model.TypeFilter;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MapTest extends AppCompatActivity implements OnMapReadyCallback {
     private static LatLng Input_LatLng = null;
     private static String PlaceName;
     private static final String TAG = "MapTest";
+
+    private static final MapLocations mapLocations = new MapLocations();
 
 
     private GoogleMap mMap;
@@ -83,16 +86,27 @@ public class MapTest extends AppCompatActivity implements OnMapReadyCallback {
 
             }
         });
+        ArrayList<Double> latitudes =mapLocations.latitudes;
+        ArrayList<Double> longitudes =mapLocations.longitudes;
+        for (int i = 0; i < latitudes.size(); i++) {
 
-       /* Input_LatLng = new LatLng(37.556, 126.97);
+            Input_LatLng = new LatLng(latitudes.get(i), longitudes.get(i));
 
-        MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(Input_LatLng);
-        markerOptions.title("서울");
-        markerOptions.snippet("한국 수도");
+            MarkerOptions markerOptions = new MarkerOptions();
+            markerOptions.position(Input_LatLng);
+            markerOptions.title("서울");
+            markerOptions.snippet("한국 수도");
 
-        mMap.addMarker(markerOptions);
+            mMap.addMarker(markerOptions);
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Input_LatLng, 10));*/
+
+
+
+        }
+
+
+
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Input_LatLng, 10));
     }
 }

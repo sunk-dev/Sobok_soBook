@@ -68,8 +68,8 @@ public class BookListActivity extends AppCompatActivity {
 
 
 
-        Button addBtn= (Button) findViewById(R.id.addBtn);
-        addBtn.setOnClickListener(new View.OnClickListener() {
+        //Button addBtn= (Button) findViewById(R.id.addBtn);
+       /*addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 LayoutInflater inflater=(LayoutInflater)
@@ -81,7 +81,7 @@ public class BookListActivity extends AppCompatActivity {
                 inflater.inflate(R.layout.book, container, true);
 
             }
-        });
+        });*/
     }
 
 
