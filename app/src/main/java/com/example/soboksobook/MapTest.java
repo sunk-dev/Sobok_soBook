@@ -28,7 +28,10 @@ public class MapTest extends AppCompatActivity implements OnMapReadyCallback {
     private static String PlaceName;
     private static final String TAG = "MapTest";
 
-    private static final MapLocations mapLocations = new MapLocations();
+    private static final LongInfo longInfo=new LongInfo();
+    private static final LatInfo latInfo=new LatInfo();
+    private static final NameInfo nameInfo=new NameInfo();
+
 
 
     private GoogleMap mMap;
@@ -86,16 +89,16 @@ public class MapTest extends AppCompatActivity implements OnMapReadyCallback {
 
             }
         });
-        ArrayList<Double> latitudes =mapLocations.latitudes;
-        ArrayList<Double> longitudes =mapLocations.longitudes;
+        ArrayList<String> name=nameInfo.name;
+        ArrayList<Double> latitudes =latInfo.latitudes;
+        ArrayList<Double> longitudes =longInfo.longitudes;
         for (int i = 0; i < latitudes.size(); i++) {
 
             Input_LatLng = new LatLng(latitudes.get(i), longitudes.get(i));
 
             MarkerOptions markerOptions = new MarkerOptions();
             markerOptions.position(Input_LatLng);
-            markerOptions.title("서울");
-            markerOptions.snippet("한국 수도");
+            markerOptions.title(name.get(i));
 
             mMap.addMarker(markerOptions);
 
