@@ -7,14 +7,26 @@
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:src="@drawable/ic_launcher_background"
-            app:civ_border_color="#000000"
-            app:civ_border_overlay="true"
-            app:civ_border_width="10dp" />
+            android:layout_height="140px"
+            android:textSize="15pt"
+            android:text="서재"/>
+        <androidx.appcompat.widget.SearchView
+            android:layout_gravity="left"
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:focusable="true"
+            app:iconifiedByDefault="false"
+           android:layout_marginLeft="30px"
+           android:layout_marginRight="30px"
+            app:layout_constraintVertical_weight="1"
+            android:background="@drawable/round"
+            app:queryHint="검색어를 입력하시오" />
     </LinearLayout>
 
     <LinearLayout
