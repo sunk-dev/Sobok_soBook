@@ -63,6 +63,7 @@ public class BookListActivity extends AppCompatActivity {
                 String content=cursor.getString(cursor.getColumnIndexOrThrow("content"));
                 String date=cursor.getString(cursor.getColumnIndexOrThrow("date"));
 
+
                 //인텐트로 값을 넘겨서 내용이 보이게 하기
                 Toast.makeText(getApplicationContext(), (title)+"번째 아이템이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
 
@@ -70,6 +71,8 @@ public class BookListActivity extends AppCompatActivity {
                 intent.putExtra("title",title);
                 intent.putExtra("content",content);
                 intent.putExtra("date",date);
+
+
 
 
                 startActivity(intent);
