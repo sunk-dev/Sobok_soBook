@@ -1,9 +1,12 @@
 package com.example.soboksobook;
 
+import static java.time.LocalTime.now;
+
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.*;
 
+import java.time.LocalTime;
 import java.util.Calendar;
 
 public class BookNoteActivity extends AppCompatActivity {
@@ -94,7 +98,10 @@ public class BookNoteActivity extends AppCompatActivity {
                 String date=editText.getText().toString();
                 String title=titleEdit.getText().toString();
                 String content=contentEdit.getText().toString();
+                LocalTime now = null;
+
                 db.execSQL("INSERT INTO mybook VALUES ( null,'"+ date +"','"+ title +"','"+ content +"'); ");
+
                 Toast.makeText(getApplicationContext(),"성공적으로 추가되었습니다",Toast.LENGTH_LONG).show();
             }
         });
