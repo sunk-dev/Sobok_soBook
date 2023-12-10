@@ -4,15 +4,16 @@
     xmlns:timer="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FCF5ED">
+    android:layout_height="match_parent">
 
     <ImageView
+        android:layout_gravity="center"
+        android:layout_marginBottom="60px"
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:background="@drawable/ic_launcher_background"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/book"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,6 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="00"
+                    android:maxLength="2"
                     android:textColor="#000000"
                     android:background="@null"
                     android:textSize="50sp"/>
@@ -55,6 +57,8 @@
                 <EditText
                     android:id="@+id/min"
                     android:hint="00"
+                    android:maxLength="2"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="00"
@@ -71,6 +75,7 @@
                     android:textSize="50sp"/>
                 <EditText
                     android:id="@+id/second"
+                    android:maxLength="2"
                     android:hint="00"
                     android:inputType="numberDecimal"
                     android:layout_width="wrap_content"
@@ -86,14 +91,20 @@
 
 
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/start"
             android:layout_width="202dp"
             android:layout_height="55dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:text="Start"
+            android:gravity="center"
             android:textSize="20dp"
             android:textColor="#fff"
             android:backgroundTint="#5F6F52"
@@ -101,8 +112,35 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/countdown_timer" />
+        <LinearLayout
+            android:id="@+id/ButtonsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/coinueBtn"
+                android:textColor="#fff"
+                android:backgroundTint="#5F6F52"
+                android:layout_width="100dp"
+                android:layout_height="55dp"
+                android:text="Continue"/>
+            <Button
+                android:id="@+id/endBtn"
+                android:textColor="#fff"
+                android:backgroundTint="#5F6F52"
+                android:layout_marginLeft="20px"
+                android:layout_width="100dp"
+                android:layout_height="55dp"
+                android:text="End"/>
+
+        </LinearLayout>
+    </LinearLayout>
 
     </LinearLayout>
+
 
 
 

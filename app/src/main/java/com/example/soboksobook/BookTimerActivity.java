@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,18 +27,25 @@ import io.github.krtkush.lineartimer.LinearTimerView;
 public class BookTimerActivity extends AppCompatActivity {
     private TextView countdownTimer;
     private CountDownTimer timer;
+    LinearLayout continueEndView;
 
-    Button mButton;
+    Button mButton ,ContinueBtn,EndBtn;
     EditText h, min,sec;
-
+    boolean isFirst=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timer);
 
+        continueEndView=(LinearLayout) findViewById(R.id.ButtonsView);
+        continueEndView.setVisibility(View.GONE);
+
         h=(EditText)findViewById(R.id.hour);
         min=(EditText) findViewById(R.id.min);
         sec=(EditText)findViewById(R.id.second);
+
+        ContinueBtn=(Button)findViewById(R.id.coinueBtn);
+        EndBtn=(Button)findViewById(R.id.endBtn);
 
 //        countdownTimer = findViewById(R.id.countdown_timer);
 
@@ -50,22 +58,56 @@ public class BookTimerActivity extends AppCompatActivity {
                 //Stop면 일시중지
 
                 //에러: 일시 중지는 되는데 다시 시작이 안됨.
-                boolean isFirst=true;
 
 
 
+                /**
+                 * start -> stop로 바꾸기
+                 * stop-> stop버튼 없개고 continueEndView 보이게 하기
+                 *         continue -> 계속 카운트 다운
+                 *         end-> 완전히 끝내고 리셋
+                 */
 
-                if(mButton.getText().toString().equals("Stop")){
-                    timer.cancel();
-                    mButton.setText("Start");
-                    isFirst=false;
-                }else{
+
+                if(mButton.getText().toString().equals("Start")){
                     mButton.setText("Stop");
                     startTimer(isFirst);
 
+                }else if(mButton.getText().toString().equals("Stop")){
+                    timer.cancel();
+                    mButton.setText("Start");
+                    mButton.setVisibility(View.GONE);
+                    continueEndView.setVisibility(View.VISIBLE);
+                    isFirst=false;
+
                 }
+
             }
         });
+
+        ContinueBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                mButton.setText("Stop");
+                mButton.setVisibility(View.VISIBLE);
+                continueEndView.setVisibility(View.GONE);
+                isFirst=true;
+                startTimer(isFirst);
+
+            }
+        });
+
+        EndBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                timer.onFinish();
+                mButton.setVisibility(View.VISIBLE);
+                continueEndView.setVisibility(View.GONE);
+
+            }
+        });
+
     }
 
 
@@ -107,6 +149,9 @@ public class BookTimerActivity extends AppCompatActivity {
                 min.setText("00");
                 sec.setText("00");
                 mButton.setText("Start");
+                h.setEnabled(true);
+                min.setEnabled(true);
+                sec.setEnabled(true);
 //                countdownTimer.setText("00:00:00");
                 Toast.makeText(BookTimerActivity.this, "Time's up", Toast.LENGTH_SHORT).show();
 //                MediaPlayer mysong = MediaPlayer.create (BookTimerActivity.this,R.raw.alarm); // please add your alarm tone mp3 file
