@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent();
         //로그인 화면에 이름이 있으면 버튼 활성화 아니면 로그인 화면으로 먼저가게 하기!
-        if(loginText.getText().toString().equals("로그인해주세요!")){
+        if(loginText.getText().toString().equals("로그인hh")){
             intent=new Intent(MainActivity.this, LoginActivity.class);
             startActivityForResult(intent,GET_RESULT);
         }else{

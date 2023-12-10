@@ -63,8 +63,9 @@ public class BookNoteActivity extends AppCompatActivity {
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(BookNoteActivity.this, BookListActivity.class);
+                Intent intent=new Intent(BookNoteActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -107,6 +108,8 @@ public class BookNoteActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"성공적으로 추가되었습니다",Toast.LENGTH_LONG).show();
                 Intent intent=new Intent(BookNoteActivity.this, BookListActivity.class);
                 startActivity(intent);
+                //이걸 해야 인텐트가 종료되서 다시 입력으로 넘어가지 않음.
+                finish();
             }
         });
 
