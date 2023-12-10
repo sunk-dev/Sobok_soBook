@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -25,7 +26,8 @@ import java.util.Calendar;
 public class BookNoteActivity extends AppCompatActivity {
     DBHelper helper;
     SQLiteDatabase db;
-    Button cancelBtn, saveBtn,datePickBtn;
+    Button cancelBtn, saveBtn;
+    ImageButton datePickBtn;
     EditText editText,titleEdit;
 
     TextInputEditText contentEdit;
@@ -55,7 +57,7 @@ public class BookNoteActivity extends AppCompatActivity {
 
         cancelBtn=(Button) findViewById(R.id.cancelBtn);
         saveBtn=(Button) findViewById(R.id.saveBtn);
-        datePickBtn=(Button)findViewById(R.id.datepickBtn);
+        datePickBtn=(ImageButton) findViewById(R.id.datepickBtn);
 
         editText=(EditText) findViewById(R.id.editTextDate);
         cancelBtn.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +105,8 @@ public class BookNoteActivity extends AppCompatActivity {
                 db.execSQL("INSERT INTO mybook VALUES ( null,'"+ date +"','"+ title +"','"+ content +"'); ");
 
                 Toast.makeText(getApplicationContext(),"성공적으로 추가되었습니다",Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(BookNoteActivity.this, BookListActivity.class);
+                startActivity(intent);
             }
         });
 

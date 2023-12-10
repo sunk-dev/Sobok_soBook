@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="200px"
         android:layout_height="200px"
-        android:src="@drawable/booklogin"
+        android:src="@drawable/booklogin"/>
 
     <TextView
 

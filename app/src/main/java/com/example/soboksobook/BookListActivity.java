@@ -57,14 +57,15 @@ public class BookListActivity extends AppCompatActivity {
 
 
 
-                adapter.notifyDataSetChanged();
-                //인텐트로 값을 넘겨서 내용이 보이게 하기
-                Toast.makeText(getApplicationContext(), (i+1)+"번째 아이템이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
 
                 Intent intent=new Intent(BookListActivity.this,BookListShowActivity.class);
                 String title=cursor.getString(cursor.getColumnIndexOrThrow("title"));
                 String content=cursor.getString(cursor.getColumnIndexOrThrow("content"));
                 String date=cursor.getString(cursor.getColumnIndexOrThrow("date"));
+
+                //인텐트로 값을 넘겨서 내용이 보이게 하기
+                Toast.makeText(getApplicationContext(), (title)+"번째 아이템이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+
 
                 intent.putExtra("title",title);
                 intent.putExtra("content",content);
@@ -72,6 +73,9 @@ public class BookListActivity extends AppCompatActivity {
 
 
                 startActivity(intent);
+                
+                //이게 무조건 아래에 있어야 데이터 갱신
+                adapter.notifyDataSetChanged();
                 
 
             }

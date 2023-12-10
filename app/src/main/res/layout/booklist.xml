@@ -9,21 +9,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <TextView
+        <ImageView
             android:gravity="center"
+            android:padding="5px"
             android:layout_width="match_parent"
             android:layout_height="140px"
             android:textSize="15pt"
-            android:text="서재"/>
+            android:src="@drawable/book"/>
         <androidx.appcompat.widget.SearchView
             android:layout_gravity="left"
             android:id="@+id/search"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:focusable="true"
             app:iconifiedByDefault="false"
+            android:layout_marginTop="10px"
            android:layout_marginLeft="30px"
            android:layout_marginRight="30px"
+
             app:layout_constraintVertical_weight="1"
             android:background="@drawable/round"
             app:queryHint="검색어를 입력하시오" />
@@ -37,7 +40,11 @@
 
         <ListView
             android:id="@+id/list"
-
+            android:layout_marginTop="30px"
+            android:layout_marginRight="30px"
+            android:layout_marginLeft="30px"
+            android:layout_marginBottom="30px"
+            android:background="@drawable/round"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1">
