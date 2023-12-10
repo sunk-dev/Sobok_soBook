@@ -27,41 +27,59 @@
 
     </LinearLayout>
     <LinearLayout
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <Button
-            android:id="@+id/datepickBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="달력"/>
-       
+        android:orientation="horizontal">
+
 
         <EditText
+            android:layout_marginLeft="30px"
             android:id="@+id/editTextDate"
             android:editable="false"
             android:onClick="onBtnClick"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType=""
             android:hint="기록날짜입력"/>
 
+        <ImageButton
+            android:id="@+id/datepickBtn"
+            android:backgroundTint="#FFF"
+            android:scaleType="centerCrop"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/cal"
+            android:text="달력"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <EditText
             android:id="@+id/editTextTextMultiLine"
-            android:layout_width="match_parent"
+            android:layout_marginLeft="30px"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine"
+            android:backgroundTint="#B1BCBE"
             android:hint="책제목 입력"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editBOOkContent"
+            android:layout_marginRight="30px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="30px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/round"
             android:hint="hint" />
 
     </LinearLayout>
@@ -75,17 +93,31 @@
         android:orientation="horizontal"
         android:gravity="right">
         <Button
+            android:textStyle="bold"
+            android:textSize="7pt"
             android:id="@+id/cancelBtn"
+            android:layout_marginTop="20px"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/round"
+            android:backgroundTint="#5F6F52"
+            android:textColor="#fff"
             android:text="취소"
             />
 
         <Button
+            android:textStyle="bold"
+            android:textSize="7pt"
             android:id="@+id/saveBtn"
+            android:layout_marginTop="20px"
+            android:layout_marginBottom="20px"
+            android:layout_marginRight="30px"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/round"
+            android:textColor="#fff"
+            android:backgroundTint="#5F6F52"
             android:text="저장" />
 
     </LinearLayout>
